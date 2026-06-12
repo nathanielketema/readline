@@ -1,0 +1,18 @@
+.{
+    .name = .realine,
+    .version = "8.3.0",
+    .minimum_zig_version = "0.16.0",
+    .fingerprint = 0xeaa0b582433baaa2, // Changing this has security and trust implications.
+    .dependencies = .{
+        .libreadline = .{
+            .url = "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz",
+            .hash = "N-V-__8AAKHDfADgndZUB3yBg5YA1iBVE1ObUJWcUBjvnBdS",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "README.md",
+        "LICENSE",
+    },
+}
