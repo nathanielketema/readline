@@ -1,8 +1,8 @@
 .{
-    .name = .realine,
+    .name = .readline,
     .version = "8.3.0",
     .minimum_zig_version = "0.16.0",
-    .fingerprint = 0xeaa0b582433baaa2, // Changing this has security and trust implications.
+    .fingerprint = 0xd934c5e31f31cb1, // Changing this has security and trust implications.
     .dependencies = .{
         .libreadline = .{
             .url = "https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz",
