@@ -60,6 +60,10 @@ pub fn build(b: *std.Build) void {
             "xmalloc.c",
         },
         .flags = &.{
+            "-Wno-parentheses",
+            "-Wno-format-security",
+            "-DBRACKETED_PASTE_DEFAULT=1",
+            "-DRL_LIBRARY_VERSION=\"8.3\"",
             "-DHAVE_UNISTD_H",
             "-DHAVE_STDLIB_H",
             "-DHAVE_STRING_H",
@@ -137,11 +141,14 @@ pub fn build(b: *std.Build) void {
 
     lib.installHeadersDirectory(upstream_root, "", .{
         .include_extensions = &.{
-            "readline.h",
-            "history.h",
-            "tilde.h",
             "chardefs.h",
+            "history.h",
             "keymaps.h",
+            "readline.h",
+            "rlconf.h",
+            "rlstdc.h",
+            "rltypedefs.h",
+            "tilde.h",
         },
     });
     b.installArtifact(lib);
