@@ -1,7 +1,7 @@
 # Readline
 
 This is [GNU Readline](https://tiswww.case.edu/php/chet/readline/rltop.html), packaged for
-[zig](https://ziglang.org/).
+[Zig](https://ziglang.org/).
 
 ## Start
 
@@ -16,5 +16,5 @@ const readline_dep = b.dependency("readline", .{
     .target = target,
     .optimize = optimize,
 });
-exe.linkLibrary(readline_dep.artifact("readline"));
+exe.root_module.linkLibrary(readline_dep.artifact("readline"));
 ```
