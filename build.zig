@@ -19,6 +19,7 @@ pub fn build(b: *std.Build) void {
         .root_module = mod,
     });
     mod.addIncludePath(upstream_root);
+    mod.linkSystemLibrary("ncurses", .{});
 
     mod.addCSourceFiles(.{
         .root = upstream_root,
