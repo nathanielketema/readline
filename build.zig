@@ -1,10 +1,5 @@
 const std = @import("std");
 
-const Macro = struct {
-    name: []const u8,
-    value: []const u8,
-};
-
 pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
