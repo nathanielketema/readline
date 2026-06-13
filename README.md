@@ -9,24 +9,12 @@ This is [GNU Readline](https://tiswww.case.edu/php/chet/readline/rltop.html), pa
 zig fetch --save git+https://github.com/nathanielketema/readline.git
 ```
 
-You can then add it as a dependency to your `build.zig`:
+You can then import readline in your `build.zig` with:
 
 ```zig
-const readline = b.dependency("readline", .{
+const readline_dep = b.dependency("readline", .{
     .target = target,
     .optimize = optimize,
-}).module("readline");
-
-// Example usage:
-const exe = b.addExecutable(.{
-    .name = "foo",
-    .root_module = b.createModule(.{
-        .root_source_file = b.path("src/main.zig"),
-        .target = target,
-        .optimize = optimize,
-        .imports = &.{
-            .{ .name = "readline", .module = readline },
-        },
-    }),
 });
+exe.linkLibrary(readline_dep.artifact("readline"));
 ```
